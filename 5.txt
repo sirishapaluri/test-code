@@ -1,0 +1,20 @@
+Steps to crawl website:
+
+1. Pick a URL from the unvisited URL list.
+2. Determine the IP Address of its host-name.
+3. Establishing a connection to the host to download the corresponding document.
+4. Parse the document contents to look for new URLs.
+5. Add the new URLs to the list of unvisited URLs.
+6. Process the downloaded document, e.g., store it or index its contents, etc.
+7. Go back to step-1.
+
+Algorithm for crawling is Breadth first search and Depth first search in 
+some situations.
+
+Components required:
+
+1. URL frontier: To store the list of URLs to download and also prioritize which URLs should be crawled first.
+2. HTTP Fetcher: To retrieve a web page from the server.
+3. Extractor: To extract links from HTML documents.
+4. Duplicate Eliminator: To make sure same content is not extracted twice unintentionally.
+5. Datastore: To store retrieve pages and URL and other metadata.
